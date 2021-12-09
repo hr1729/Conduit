@@ -31,9 +31,9 @@ class ConduitClientTests {
     @Test
     fun `POST users - create user`(){
        val usersisOk= UserCredential(
-            "testemail${122}@test.com",
-            "pass${1234}",
-        "rand_user_${12}"
+           email = "testemail${Random.nextInt(999, 9999)}@test.com",
+           password = "pass${Random.nextInt(9999, 999999)}",
+           username = "rand_user_${Random.nextInt(99, 999)}"
             )
         runBlocking {
             val user1=Client.api.signupuser(signUpReqest(usersisOk))
