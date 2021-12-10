@@ -22,4 +22,9 @@
         android:name="com.example.conduit.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_feed"
+        android:name="com.example.conduit.ui.feed.GlobalFeedFragment"
+        tools:layout="@layout/fragment_feed"
+        android:label="Feed" />
 </navigation>

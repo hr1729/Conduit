@@ -2,7 +2,7 @@ package apitests
 
 import com.example.api.Client
 import com.example.api.model.requests.UserCredential
-import com.example.api.model.requests.signUpReqest
+import com.example.api.model.requests.signUpRequest
 import junit.framework.TestCase.assertEquals
 import junit.framework.Assert.assertNotNull
 import kotlinx.coroutines.runBlocking
@@ -25,8 +25,6 @@ class ConduitClientTests {
                 val articles = Client.api.getArticles(author = "Gerome")
                 assertNotNull(articles.body()?.articles)
             }
-
-
         }
     @Test
     fun `POST users - create user`(){
@@ -36,8 +34,8 @@ class ConduitClientTests {
            username = "rand_user_${Random.nextInt(99, 999)}"
             )
         runBlocking {
-            val user1=Client.api.signupuser(signUpReqest(usersisOk))
+            val user1=Client.api.signupuser(signUpRequest(usersisOk))
             assertEquals(usersisOk.username,user1.body()?.user?.username)
-        }
+     }
     }
     }
