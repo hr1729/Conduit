@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.lang.ref.Cleaner.create
 
 class Client {
-    val retrofit: Retrofit = Retrofit.Builder().baseUrl("https://conduit.productionready.io/api/")
+    val retrofit: Retrofit = Retrofit.Builder().baseUrl("https://api.realworld.io/api/")
         .addConverterFactory(MoshiConverterFactory.create()).build()
     val api=retrofit.create(Services::class.java)
 
